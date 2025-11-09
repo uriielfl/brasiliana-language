@@ -4,25 +4,37 @@
   "description": "Linguagem de programacao interpretada que visa auxiliar pessoas lusofonicas a aprenderem a programar sem a barreira linguistica, porem com uma sintaxe mais moderna ",
   "main": "index.js",
   "bin": {
-    "brasiliana": "dist/index.js"
+    "brasiliana": "bin/brasiliana.js"
   },
   "pkg": {
-    "assets": [
-      "main.brasiliana"
+    "scripts": [
+      "dist/index.js",
+      "bin/brasiliana.js"
+    ],
+    "outputPath": "release",
+    "targets": [
+      "node18-win-x64",
+      "node18-linux-x64",
+      "node18-macos-x64",
+      "node18-macos-arm64"
     ]
   },
   "scripts": {
     "dev": "ts-node src/index.ts",
     "dev:watch": "nodemon",
-    "build": "tsc",
+    "build": "tsc -p tsconfig.json",
+    "build:exe:win": "npm run build && pkg bin/brasiliana.js -t node18-win-x64 -o release/brasiliana-win.exe",
+    "build:exe:all": "npm run build && pkg bin/brasiliana.js -t node18-win-x64,node18-linux-x64,node18-macos-x64,node18-macos-arm64 -o release/brasiliana",
     "package": "pkg .",
     "format": "prettier --write .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "link": "npm link"
   },
   "author": "Uriel Francisco Libano <uriellibano2009@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^3.1.9",
+    "pkg": "^5.8.1",
     "prettier": "^3.5.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2"
