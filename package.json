@@ -1,6 +1,6 @@
 {
   "name": "brasiliana-lang",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Linguagem de programacao interpretada que visa auxiliar pessoas lusofonicas a aprenderem a programar sem a barreira linguistica, porem com uma sintaxe mais moderna ",
   "main": "index.js",
   "bin": {
