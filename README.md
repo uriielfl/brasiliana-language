@@ -42,7 +42,7 @@
 A **Brasiliana** é uma linguagem interpretada que:
 - Usa **palavras-chave em Português**: `declarar variavel`, `declarar funcao`, `se`, `senao`, `enquanto`, `repita de ... ate`, `retorne`, `imprimir`.
 - Tem **semântica familiar a JS**, mas com foco em **clareza** para iniciantes.
-- É distribuída como binário (por exemplo, `brasiliana-lang-win-x64.exe`) que executa arquivos `.brasiliana`.
+- É distribuída como binário (por exemplo, `brasiliana-lang-win-x64`) que executa arquivos `.brasiliana`.
 
 ---
 
@@ -67,10 +67,9 @@ A **Brasiliana** é uma linguagem interpretada que:
 brasiliana-lang-win-x64.exe caminho\para\arquivo.brasiliana
 ```
 
-### Interativo (se habilitado no build)
+### Caso configurado nas variáveis de ambiente do sistema(win)
 ```bash
-brasiliana-lang-win-x64.exe
-# Digite comandos Brasiliana no REPL
+brasiliana caminho\para\arquivo.brasiliana
 ```
 
 > Se `brasiliana` não for reconhecido no terminal do Windows PowerShell, verifique o **PATH** ou execute via caminho completo, por ex.: `C:\Ferramentas\brasiliana\brasiliana-lang-win-x64.exe`.
@@ -172,8 +171,6 @@ Sugestões de API futura:
 
 - `--version` · mostra a versão.
 - `--help` · ajuda de uso.
-- `--ast` · imprime a AST do arquivo (debug).
-- `--trace` · log detalhado do interpretador.
 
 Exemplo esperado:
 ```bash
@@ -188,8 +185,6 @@ brasiliana-lang-win-x64.exe --help
 - **Sintaxe/Highlight** básico (grammar `.tmLanguage.json`).
 - **Snippets**: `declarar variavel`, `declarar funcao`, `se/senao`, `enquanto`, `repita de ... ate`, `imprimir`.
 - (Futuro) **LSP**: validação, hover, auto-complete e go-to-definition.
-
-> Recomendado: publicar como `brasiliana-lang` no Marketplace. Colocar link aqui quando disponível.
 
 ---
 
